@@ -73,7 +73,7 @@ class Fontis_Australia_Model_Shipping_Carrier_Eparcel
                     $method->setCarrier('eparcel');
                     $method->setCarrierTitle($this->getConfigData('title'));
                     if ($this->_getChargeCode($rate)) {
-                        $_method = strtolower(str_replace(' ', '_', $this->_getChargeCode($rate)));
+                    	$_method = strtolower(str_replace(' ', '_', $this->_getChargeCode($rate))).'_'.$rate['pk'];
                     } else {
                         $_method = strtolower(str_replace(' ', '_', $rate['delivery_type']));
                     }
